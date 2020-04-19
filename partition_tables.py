@@ -75,7 +75,7 @@ def main():
 
     with open(args.filename, 'rb') as f:
         if args.mbr_type == "gpt":
-            _dict = parse_gpt(f, args.sector)
+            _dict = parse_gpt(f, int(args.sector, 10))
         elif args.mbr_type == "mbr":
             data = f.read(512)
             _dict = parse_mbr(data)
